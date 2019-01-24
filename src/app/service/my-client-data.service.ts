@@ -1,18 +1,20 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { MyClient } from '../my-client-component/my-client.interface';
-import { Subject, Observable } from 'rxjs';
+import { Subject, Observable, Subscription } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 
-export class MyClientDataService {
+export class MyClientDataService implements OnDestroy {
 
     private _clientData: MyClient[] = [];
+
+    private subscriptions: Subscription = Subscription.EMPTY;
 
     private clientData$ = new Subject<MyClient[]>();
 
     constructor(private http: HttpClient) {
-        this.http.get('../assets/my-clients.json').subscribe(
+        this.subscriptions = this.http.get('../assets/my-clients.json').subscribe(
             (res) => {
                 const data = res as any[];
                 data.forEach(element => {
@@ -35,5 +37,9 @@ export class MyClientDataService {
     public updateData(myClient: MyClient) {
         this._clientData.push(myClient);
         this.clientData$.next(this._clientData);
+    }
+
+    ngOnDestroy() {
+        this.subscriptions.unsubscribe();
     }
 }
