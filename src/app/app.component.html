@@ -3,6 +3,14 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
+  <div class="block">
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <div class="block">
+    <div class="content">
+      <router-outlet name='myClients'></router-outlet>
+    </div>
+  </div>
 </div>
-<ng-custom-profile></ng-custom-profile>
-

@@ -1,0 +1,10 @@
+.block {
+    width: 50%;
+    float: left;
+}
+
+.content {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid grey;
+}
