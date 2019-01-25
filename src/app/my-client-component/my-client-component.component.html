@@ -1,7 +1,21 @@
 <h2>My Clients</h2>
-<div>
-  <div *ngFor="let item of jsonData">
-    {{item.Name}}
-    <img src={{item.Image}} />
+<div class="row">
+  <div *ngFor="let item of jsonData" class="col col-sm-12 col-md-6 col-lg-3">
+    <div class="client-img container">
+      <img src={{item.Image}} class="image" />
+      <div class="middle">
+        <div>
+          <button (click)="deleteClient(item)" type="button" class="btn btn-default btn-sm">
+            <span class="fa fa-trash fa-4x"></span> 
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="client-name">
+      {{item.Name}}
+    </div>
+    <div class="client-desc">
+      {{item.Id}}
+    </div>
   </div>
 </div>

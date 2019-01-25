@@ -21,4 +21,8 @@ export class MyClientComponentComponent implements OnInit {
       }
     );
   }
+
+  deleteClient(client: MyClient) {
+    this.myClientDataService.deleteData(client);
+  }
 }

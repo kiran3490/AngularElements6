@@ -8,13 +8,14 @@ import { MyClientComponentComponent } from './my-client-component/my-client-comp
 import { WidgetsComponentComponent } from './widgets-component/widgets-component.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MyClientDataService } from './service/my-client-data.service';
+import { WidgetCollectionComponentComponent } from './widget-collection-component/widget-collection-component.component';
 
 const routes: Routes = [
   {
     path: '', component: WidgetsComponentComponent, pathMatch: 'full',
   },
   {
-    path: '', outlet: 'myClients', component: MyClientComponentComponent
+    path: '', outlet: 'wigetCollection', component: WidgetCollectionComponentComponent
   }
 ];
 
@@ -23,7 +24,8 @@ const routes: Routes = [
     AppComponent,
     ProfileComponent,
     MyClientComponentComponent,
-    WidgetsComponentComponent
+    WidgetsComponentComponent,
+    WidgetCollectionComponentComponent
   ],
   imports: [
     BrowserModule,
