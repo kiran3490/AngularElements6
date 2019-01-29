@@ -1,4 +1,9 @@
 <p>
   widget-collection-component works!
 </p>
-<app-my-client-component></app-my-client-component>
+<div class="col-md-12" [class.fixHeight]="!special">
+  <div class="pull-right">
+    <button class="btn btn-primary" (click)="btnClick()">...</button>
+  </div>
+  <app-my-client-component></app-my-client-component>
+</div>

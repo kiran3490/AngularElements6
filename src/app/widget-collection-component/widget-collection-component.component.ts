@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./widget-collection-component.component.css']
 })
 export class WidgetCollectionComponentComponent implements OnInit {
-
+  public special = false;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  btnClick() {
+    this.special = !this.special;
   }
 
 }
