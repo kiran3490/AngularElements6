@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 
 export class MyClientDataService implements OnDestroy {
+    private getUrl = 'https://my-json-server.typicode.com/kiran3490/demo/clients';
 
     private _clientData: MyClient[] = [];
 
@@ -14,7 +15,7 @@ export class MyClientDataService implements OnDestroy {
     private clientData$ = new ReplaySubject<MyClient[]>();
 
     constructor(private http: HttpClient) {
-        this.subscriptions = this.http.get('../assets/my-clients.json').subscribe(
+        this.subscriptions = this.http.get(this.getUrl).subscribe(
             (res) => {
                 const data = res as any[];
                 data.forEach(element => {
