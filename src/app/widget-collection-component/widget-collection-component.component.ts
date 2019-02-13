@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DynamicComponent } from '../dynamic/dynamic.component';
 
 @Component({
   selector: 'app-widget-collection-component',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WidgetCollectionComponentComponent implements OnInit {
   public special = false;
-  constructor() { }
+  private dynamicComponent1 = '<app-dynamic></app-dynamic>';
+
+  public alert = DynamicComponent;
+  constructor() {
+  }
 
   ngOnInit() {
   }

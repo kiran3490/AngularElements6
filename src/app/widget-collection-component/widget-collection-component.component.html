@@ -1,6 +1,13 @@
 <p>
   widget-collection-component works!
 </p>
+{{dynamicComponent1}}
+<app-dynamic></app-dynamic>
+<br/>
+
+<ng-container *ngComponentOutlet="alert"></ng-container>
+
+
 <div class="col-md-12" [class.fixHeight]="!special">
   <div class="pull-right">
     <button class="btn btn-primary" (click)="btnClick()">...</button>

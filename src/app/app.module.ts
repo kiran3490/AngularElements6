@@ -9,6 +9,7 @@ import { WidgetsComponentComponent } from './widgets-component/widgets-component
 import { HttpClientModule } from '@angular/common/http';
 import { MyClientDataService } from './service/my-client-data.service';
 import { WidgetCollectionComponentComponent } from './widget-collection-component/widget-collection-component.component';
+import { DynamicComponent } from './dynamic/dynamic.component';
 
 const routes: Routes = [
   {
@@ -25,7 +26,8 @@ const routes: Routes = [
     ProfileComponent,
     MyClientComponentComponent,
     WidgetsComponentComponent,
-    WidgetCollectionComponentComponent
+    WidgetCollectionComponentComponent,
+    DynamicComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,10 @@ const routes: Routes = [
   ],
   providers: [MyClientDataService],
   exports: [RouterModule],
-  // entryComponents: [ProfileComponent],
+  entryComponents: [
+    //  ProfileComponent
+    DynamicComponent
+  ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
