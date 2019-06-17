@@ -7,10 +7,7 @@ import { DynamicComponent } from '../dynamic/dynamic.component';
   styleUrls: ['./widget-collection-component.component.css']
 })
 export class WidgetCollectionComponentComponent implements OnInit {
-  public special = false;
-  private dynamicComponent1 = '<app-dynamic></app-dynamic>';
-
-  public alert = DynamicComponent;
+  public special = true;
   constructor() {
   }
 

@@ -16,10 +16,21 @@ export class WidgetsComponentComponent implements OnInit {
 
   btnClick() {
     const myclient = {} as MyClient;
-    myclient.Id = 12;
-    myclient.Name = 'TTTT';
-    myclient.Image = 'https://robohash.org/omnisaliquamrerum.jpg?size=50x50&set=set1';
+    const randomText = this.generateRandomText(8);
+    myclient.Id = Math.floor(Math.random() * 8);
+    myclient.Name = randomText;
+    myclient.Image = 'https://robohash.org/' + randomText + '?size=50x50&set=set1';
     this.myClientDataService.updateData(myclient);
   }
 
+
+  generateRandomText(length) {
+    let result = '';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+    for (let i = 0; i < length; i++) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+  }
 }
